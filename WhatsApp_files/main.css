@@ -1,0 +1,117 @@
+.block.number {
+    padding: 64px 60px 60px;
+}
+
+    .block.number.hidden {
+        display: none;
+    }
+
+    .block.code h2,
+    .block.number h2 {
+        font-size: 26px;
+        font-weight: 300;
+        line-height: normal;
+        color: #41525d;
+        text-align: center;
+    }
+
+    .block.number p {
+        font-size: 15px;
+        color: #8696a0;
+        text-align: center;
+        margin-top: 14px;
+    }
+
+    .block.number .form {
+        margin-top: 32px;
+    }
+
+        .block.number .form .country.active {
+            border: 1px solid #008069;
+        }
+
+        .block.number .form .qrcode {
+            color: #008069;
+        }
+
+        .block.number .form p.error {
+            color: #ea0038;
+        }
+
+    .block.number input.number:focus {
+        border: 1px solid #008069;
+    }
+
+.block.code.hidden {
+    display: none;
+}
+
+.block.code h2 {
+    text-align: start;
+    margin-top: 30px;
+}
+
+.block.code .description {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    border-bottom: 1px solid #d1d7db;
+    padding-bottom: 20px;
+    gap: 35px;
+}
+
+    .block.code .description .change-number {
+        color: #8696a0;
+        font-size: 15px;
+        line-height: 21px;
+        margin-top: 24px;
+    }
+
+        .block.code .description .change-number a {
+            text-decoration: none;
+            color: #008069;
+        }
+
+    .block.code .description ul {
+        margin-top: 32px;
+    }
+
+.block.code .number-container {
+    position: relative;
+    width: 100%;
+    max-width: 417px;
+    height: 100%;
+    min-height: 300px;
+    margin-top: 155px;
+}
+
+    .block.code .number-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .block.code .number-container .loader {
+        left: 43%;
+        top: 0;
+    }
+
+.block.code .qrcode {
+    display: block;
+    width: max-content;
+    text-decoration: none;
+    color: #008069;
+    margin: 40px 0 24px 0;
+    font-size: 17px;
+}
+
+@media screen and (max-width: 1024px) {
+    .block.code .number-container {
+        margin: 0 auto 20px;
+        min-height: 55px;
+    }
+
+    .block.code .qrcode {
+        font-size: 15px;
+    }
+}
